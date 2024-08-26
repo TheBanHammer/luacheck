@@ -1,10 +1,9 @@
 local package_name = "luacheck"
-local package_version = "dev"
+local package_version = "1.1.2"
 local rockspec_revision = "1"
 local github_account_name = "lunarmodules"
 local github_repo_name = package_name
 
-rockspec_format = "3.0"
 package = package_name
 version = package_version .. "-" .. rockspec_revision
 
@@ -30,22 +29,12 @@ dependencies = {
    "argparse >= 0.6.0",
    "luafilesystem >= 1.6.3"
 }
-
-test_dependencies = {
-   "busted",
-}
-
-test = {
-   type = "busted",
-}
-
 build = {
    type = "builtin",
    modules = {
       luacheck = "src/luacheck/init.lua",
       ["luacheck.builtin_standards"] = "src/luacheck/builtin_standards/init.lua",
       ["luacheck.builtin_standards.love"] = "src/luacheck/builtin_standards/love.lua",
-      ["luacheck.builtin_standards.minetest"] = "src/luacheck/builtin_standards/minetest.lua",
       ["luacheck.builtin_standards.playdate"] = "src/luacheck/builtin_standards/playdate.lua",
       ["luacheck.builtin_standards.ngx"] = "src/luacheck/builtin_standards/ngx.lua",
       ["luacheck.cache"] = "src/luacheck/cache.lua",
